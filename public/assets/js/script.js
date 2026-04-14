@@ -49,9 +49,23 @@ leadForm.addEventListener('submit', async (e) => {
   const telefone = document.getElementById('telefone').value.trim();
   const mensagem = document.getElementById('mensagem').value.trim();
 
+
   if (!nome || !email || !telefone || !mensagem) {
     formMessage.textContent = 'Preencha todos os campos.';
     formMessage.style.color = '#dc2626';
+    return;
+  }
+
+  const host = window.location.hostname;
+  const isOnlineDemo =
+   host.includes('web.app') ||
+   host.includes('firebaseapp.com');
+
+
+  if (isOnlineDemo) {
+    formMessage.textContent =
+      'Versão online para demonstração. O envio completo com banco de dados pode ser testado localmente.';
+    formMessage.style.color = '#2563eb';
     return;
   }
 
