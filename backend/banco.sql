@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS ellos_teste CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE ellos_teste;
+
+CREATE TABLE IF NOT EXISTS leads (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    mensagem TEXT NOT NULL,
+    criando_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
